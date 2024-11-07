@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบคำร้องออนไลน์ - ตรวจสอบสถานะคำร้อง</title>
+    <link rel="stylesheet" href="css/check_status.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="img/thammasat-logo.png" alt="Thammasat University Logo">
+            </div>
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="img/blank-profile-picture-973460_1920.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <p class="student-name">Loading...</p>
+                    <p class="student-id">Loading...</p>
+                </div>
+            </div>
+            <nav class="menu">
+                <button class="menu-btn">ข้อมูลส่วนตัว</button>
+                <button class="menu-btn">เขียนคำร้อง</button>
+                <button class="menu-btn active">ตรวจสอบสถานะคำร้อง</button>
+                <button class="menu-btn logout">ออกจากระบบ</button>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="content-header">
+                <h1>ตรวจสอบสถานะคำร้อง</h1>
+            </header>
+
+            <section class="petition-status-section">
+                <div class="info-section">
+                    <h2>สถานะคำร้อง</h2>
+                    <div class="status-grid">
+                        <div class="status-card">
+                            <p class="petition-title">คำร้องขอลาพักการศึกษา</p>
+                            <p class="petition-status">สถานะ: <span class="status-text">กำลังดำเนินการ</span></p>
+                            <p class="petition-date">วันที่ยื่น: 15/10/2567</p>
+                        </div>
+                        <div class="status-card">
+                            <p class="petition-title">คำร้องกรณีขาดสอบ</p>
+                            <p class="petition-status">สถานะ: <span class="status-text">อนุมัติแล้ว</span></p>
+                            <p class="petition-date">วันที่ยื่น: 10/09/2567</p>
+                        </div>
+                        <!-- เพิ่มสถานะคำร้องอื่นๆ ตามต้องการ -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- เชื่อมโยงกับไฟล์ JavaScript -->
+    <script type="module" src="js/API.js"></script>
+    <script type="module" src="js/student_data.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบคำร้องออนไลน์ - ข้อมูลนักศึกษา</title>
+    <link rel="stylesheet" href="css/styles_student.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="img/thammasat-logo.png" alt="Thammasat University Logo">
+            </div>
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="img/blank-profile-picture-973460_1920.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <p class="student-name">Loading...</p>
+                    <p class="student-id">Loading...</p>
+                </div>
+            </div>
+            <nav class="menu">
+                <button class="menu-btn active">ข้อมูลส่วนตัว</button>
+                <button class="menu-btn">เขียนคำร้อง</button>
+                <button class="menu-btn">ตรวจสอบสถานะคำร้อง</button>
+                <button class="menu-btn logout">ออกจากระบบ</button>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="loading-overlay">
+                <div class="spinner"></div>
+                <p>กำลังโหลดข้อมูล...</p>
+            </div>
+
+            <header class="content-header">
+                <h1>ประวัตินักศึกษา</h1>
+            </header>
+
+            <div class="content-body">
+                <!-- Personal Information Section -->
+                <section class="info-section">
+                    <h2>ข้อมูลส่วนบุคคล</h2>
+                    <div class="form-grid">
+                        <!-- Thai Name Group -->
+                        <div class="name-group-th">
+                            <div class="form-group">
+                                <label for="firstName">ชื่อ</label>
+                                <input type="text" id="firstName" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">นามสกุล</label>
+                                <input type="text" id="lastName" disabled>
+                            </div>
+                        </div>
+
+                        <!-- English Name Group -->
+                        <div class="name-group-en">
+                            <div class="form-group">
+                                <label for="firstNameEn">First Name</label>
+                                <input type="text" id="firstNameEn" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastNameEn">Last Name</label>
+                                <input type="text" id="lastNameEn" disabled>
+                            </div>
+                        </div>
+
+                        <!-- ID Number Group -->
+                        <div class="id-number-group">
+                            <div class="form-group">
+                                <label for="id-number">เลขบัตรประจำตัวประชาชน</label>
+                                <input type="text" id="id-number" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Academic Information Section -->
+                <section class="info-section">
+                    <h2>ข้อมูลการศึกษา</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="faculty">คณะ</label>
+                            <select id="faculty" disabled>
+                                <option value="">เลือกคณะ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">ภาควิชา</label>
+                            <select id="department" disabled>
+                                <option value="">เลือกภาควิชา</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="major">สาขาวิชา</label>
+                            <select id="major" disabled>
+                                <option value="">เลือกสาขาวิชา</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="advisor">อาจารย์ที่ปรึกษา</label>
+                            <input type="text" id="advisor" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">สถานภาพ</label>
+                            <input type="text" id="status" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gpax">GPAX</label>
+                            <input type="text" id="gpax" disabled>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Information Section -->
+                <section class="info-section">
+                    <h2>ข้อมูลการติดต่อ</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="email">อีเมล</label>
+                            <input type="email" id="email" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">เบอร์โทรศัพท์</label>
+                            <input type="tel" id="phone" disabled>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="address">ที่อยู่</label>
+                            <textarea id="address" rows="3" disabled></textarea>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>แจ้งเตือน</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/API.js"></script>
+    <script type="module" src="js/student_data.js"></script>
+</body>
+</html>

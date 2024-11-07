@@ -1,0 +1,146 @@
+/* styles_petition.css */
+.petition-list {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--box-shadow);
+}
+
+.petition-category h2 {
+    color: var(--text-gray);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.petition-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* ใช้คอลัมน์เดียว */
+}
+
+
+.petition-card {
+    background-color: var(--background-gray);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-gray);
+    width: 100%; /* ให้การ์ดใช้ขนาดเต็มของ container ที่มันอยู่ */
+    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างระหว่างการ์ดแต่ละอัน */
+}
+
+
+
+.petition-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-color: var(--tu-red);
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-content h3 {
+    color: var(--text-gray);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    flex: 1;
+}
+
+.card-icon {
+    margin-left: 1rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: var(--background-gray);
+    transition: all 0.3s ease;
+}
+
+.petition-card:hover .card-icon {
+    background-color: var(--tu-red);
+}
+
+.card-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-gray);
+    transition: all 0.3s ease;
+}
+
+.petition-card:hover .card-icon svg {
+    fill: white;
+}
+
+/* Submit Method Section Styles */
+.section-header {
+    display: flex;
+    align-items: center;
+}
+
+.content-submit {
+    background-color: rgb(255, 255, 255); /* สีพื้นหลังขาวเหมือนกับ .petition-list */
+    padding: 1rem 1.5rem; /* ระยะห่างด้านใน */
+    padding-bottom: 30rem; /* เพิ่มระยะห่างด้านล่าง */
+    border-radius: 10px; /* ปรับให้มีมุมโค้งเหมือนกับ .petition-card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้เหมือนกับการ์ด */
+    border: 1px solid var(--border-gray); /* เพิ่มเส้นขอบเหมือนกับ .petition-card */
+    transition: all 0.3s ease; /* ทำให้มีการเปลี่ยนแปลงแบบ smooth เมื่อมีการโต้ตอบ */
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--background-gray);
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+}
+
+.submit-options {
+    padding: 0 1.5rem;
+}
+
+/* Animation */
+.fade-enter {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}

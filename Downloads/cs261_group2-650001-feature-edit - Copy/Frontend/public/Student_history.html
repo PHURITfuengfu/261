@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ระบบคำร้องออนไลน์ มหาวิทยาลัยธรรมศาสตร์">
+    <title>ประวัตินักศึกษา - ระบบคำร้องนักศึกษา</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles_student.css">
+    <script type="module" src="js/student_data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="img/thammasat-logo.png" alt="Thammasat University Logo">
+            </div>
+
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="img/blank-profile-picture-973460_1920.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <div class="student-name">Loading...</div>
+                    <div class="student-id">Loading...</div>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <a href="Student_history.html" class="menu-btn active">
+                    <i class="fas fa-user"></i>
+                    ข้อมูลส่วนตัว
+                </a>
+                <a href="petition_type.html" class="menu-btn">
+                    <i class="fas fa-file-alt"></i>
+                    เขียนคำร้อง
+                </a>
+                <a href="check_status.html" class="menu-btn">
+                    <i class="fas fa-tasks"></i>
+                    ตรวจสอบสถานะคำร้อง
+                </a>
+                <a href="check_History.html" class="menu-btn">
+                    <i class="fas fa-history"></i>
+                    ดูประวัติคำร้อง
+                </a>
+                <a href="#" class="menu-btn logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    ออกจากระบบ
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="loading-overlay">
+                <div class="spinner"></div>
+                <p>กำลังโหลดข้อมูล...</p>
+            </div>
+
+            <header class="content-header">
+                <h1>ประวัตินักศึกษา</h1>
+            </header>
+
+            <!-- Personal Information Section -->
+            <section id="personal" class="info-section">
+                <h2>ข้อมูลส่วนบุคคล</h2>
+                <div class="form-grid">
+                    <!-- Thai Name -->
+                    <div class="name-group-th">
+                        <div class="form-group">
+                            <label for="firstName">ชื่อ (ภาษาไทย)</label>
+                            <input type="text" id="firstName" class="editable" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">นามสกุล (ภาษาไทย)</label>
+                            <input type="text" id="lastName" class="editable" disabled>
+                        </div>
+                    </div>
+
+                    <!-- English Name -->
+                    <div class="name-group-en">
+                        <div class="form-group">
+                            <label for="firstNameEn">First Name</label>
+                            <input type="text" id="firstNameEn" class="editable" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastNameEn">Last Name</label>
+                            <input type="text" id="lastNameEn" class="editable" disabled>
+                        </div>
+                    </div>
+
+                    <!-- ID Number -->
+                    <div class="form-group full-width">
+                        <label for="id-number">เลขบัตรศึกษา</label>
+                        <input type="text" id="id-number" class="editable" disabled>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Information Section -->
+            <section id="academic" class="info-section">
+                <h2>ข้อมูลการศึกษา</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="faculty">คณะ</label>
+                        <input type="text" id="faculty" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">ภาควิชา</label>
+                        <input type="text" id="department" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="major">สาขาวิชา</label>
+                        <input type="text" id="major" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="advisor">อาจารย์ที่ปรึกษา</label>
+                        <input type="text" id="advisor" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">สถานภาพ</label>
+                        <input type="text" id="status" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gpax">GPAX</label>
+                        <input type="text" id="gpax" disabled>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Information Section -->
+            <section id="contact" class="info-section">
+                <h2>ข้อมูลการติดต่อ</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="email">อีเมล</label>
+                        <input type="email" id="email" class="editable" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์</label>
+                        <input type="tel" id="phone" class="editable" disabled>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="address">ที่อยู่</label>
+                        <input type="text" id="address" class="editable" disabled>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>แจ้งเตือน</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header success">
+                <h3>สำเร็จ</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="successMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn success">ตกลง</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

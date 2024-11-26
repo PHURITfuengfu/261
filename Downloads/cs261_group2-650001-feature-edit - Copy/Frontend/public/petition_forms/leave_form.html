@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ระบบคำร้องออนไลน์ มหาวิทยาลัยธรรมศาสตร์">
+    <title>ระบบคำร้องออนไลน์ - คำร้องลาพักการศึกษา</title>
+    <link rel="stylesheet" href="../css/styles_student.css">
+    <link rel="stylesheet" href="../css/styles_form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../img/thammasat-logo.png" alt="Thammasat University Logo">
+            </div>
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="../img/blank-profile-picture-973460_1920.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <p class="student-name">Loading...</p>
+                    <p class="student-id">Loading...</p>
+                </div>
+            </div>
+            <nav class="menu">
+                <button class="menu-btn">ข้อมูลส่วนตัว</button>
+                <button class="menu-btn active">เขียนคำร้อง</button>
+                <button class="menu-btn">ตรวจสอบสถานะคำร้อง</button>
+                <button class="menu-btn">ดูประวัติคำร้อง</button>
+                <button class="menu-btn logout">ออกจากระบบ</button>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="loading-overlay">
+                <div class="spinner"></div>
+                <p>กำลังโหลดข้อมูล...</p>
+            </div>
+
+            <header class="content-header">
+                <h1>ยื่นคำร้อง</h1>
+            </header>
+
+            <div class="form-container">
+                <header class="content-header">
+                    <div class="header-nav">
+                        <a href="../petition_type.html?type=leave" class="back-link">
+                            <span class="back-icon">‹</span>
+                            คำร้องลาพักการศึกษา
+                        </a>
+                        <span class="separator">|</span>
+                        <span>กรอกแบบฟอร์มออนไลน์</span>
+                    </div>
+                </header>
+                <form id="leaveForm" class="petition-form">
+                    <div class="form-section">
+                        <!-- Personal Info Section -->
+                        <div class="form-group">
+                            <label>ชื่อ</label>
+                            <div class="name-group">
+                                <input type="text" id="firstName" disabled>
+                                <input type="text" id="lastName" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <div class="name-group">
+                                <input type="text" id="firstNameEn" disabled>
+                                <input type="text" id="lastNameEn" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>เลขทะเบียน</label>
+                            <input type="text" id="idNumber" placeholder="กรุณากรอกเลขทะเบียน">
+                        </div>
+
+                        <!-- Leave Request Details -->
+                        <div class="form-group">
+                            <label>มีความประสงค์จะลาพักการศึกษาเนื่องจาก</label>
+                            <input type="text" name="leaveReason" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ขออนุญาตลาพักการศึกษา</label>
+                            <div class="semester-line">
+                                <span>ในภาค</span>
+                                <input type="text" name="semester" required class="semester-input">
+                                <span>รวม</span>
+                                <input type="text" name="totalSemesters" required class="semester-input">
+                                <span>ภาคการศึกษา</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>โดย</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="type1" name="registrationType" value="ไม่ได้จดทะเบียนเป็นลักษณะวิชาภาค">
+                                    <label for="type1">ไม่ได้จดทะเบียนเป็นลักษณะวิชาภาค</label>
+                                </div>
+
+                                <div class="radio-option">
+                                    <input type="radio" id="type2" name="registrationType" value="ได้จดทะเบียนเป็นลักษณะวิชาภาค">
+                                    <label for="type2">
+                                        ได้จดทะเบียนเป็นลักษณะวิชาภาค
+                                        <div class="sub-fields" data-for="type2">
+                                            <input type="text" name="registeredSemester" placeholder="ระบุภาค">
+                                            <input type="text" name="courseCode" placeholder="เขียนรหัสวิชา">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ในระหว่างลาพักติดต่อข้าพเจ้าได้ที่</label>
+                            <input type="text" name="contactAddress" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>โทรศัพท์</label>
+                            <input type="tel" name="phoneNumber" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">ส่ง</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>แจ้งเตือน</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4/dist/fontkit.umd.js"></script>    
+    <script type="module" src="../js/leave_form.js"></script>
+</body>
+</html>

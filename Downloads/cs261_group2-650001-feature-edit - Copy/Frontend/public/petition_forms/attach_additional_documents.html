@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ระบบคำร้องออนไลน์ มหาวิทยาลัยธรรมศาสตร์">
+    <title>ระบบคำร้องออนไลน์ - คำร้องปกติศึกษา</title>
+    <link rel="stylesheet" href="../css/styles_student.css">
+    <link rel="stylesheet" href="../css/styles_form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../img/thammasat-logo.png" alt="Thammasat University Logo">
+            </div>
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="../img/blank-profile-picture-973460_1920.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <p class="student-name">Loading...</p>
+                    <p class="student-id">Loading...</p>
+                </div>
+            </div>
+            <nav class="menu">
+                <button class="menu-btn">ข้อมูลส่วนตัว</button>
+                <button class="menu-btn">เขียนคำร้อง</button>
+                <button class="menu-btn active">ตรวจสอบสถานะคำร้อง</button>
+                <button class="menu-btn">ดูประวัติคำร้อง</button>
+                <button class="menu-btn logout">ออกจากระบบ</button>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="loading-overlay">
+                <div class="spinner"></div>
+                <p>กำลังโหลดข้อมูล...</p>
+            </div>
+            
+            <header class="content-header">
+                <h1>แนบเอกสารเพิ่มเติม</h1>
+            </header>
+                <main>
+                    <div class="form-container">
+                        <form>
+                            <div class="form-group">
+                                <label for="firstname_th">ชื่อ</label>
+                                <input type="text" id="firstname_th" placeholder="**ชื่อ**">
+                                <label for="lastname_th">นามสกุล</label>
+                                <input type="text" id="lastname_th" placeholder="**นามสกุล**">
+                                <label for="firstname_eng">First Name</label>
+                                <input type="text" id="firstname_eng" placeholder="**FirstName**">
+                                <label for="lastname_eng">Last Name</label>
+                                <input type="text" id="lastname_eng" placeholder="**Last Name**">
+                                <label for="id">เลขบัตรประจำตัวประชาชน</label>
+                                <input type="text" id="id" placeholder="1-xxxx-xxxx-xx-x">
+                                <label for="subject">เรื่อง</label>
+                                <input type="text" id="subject" placeholder="**เรื่อง**">
+                            </div>
+                            <div class="form-group">
+                                <label>ประสงค์จะยื่นคำร้องเรื่อง</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="request" value="option1">
+                                        จดทะเบียนล่าช้า/เพิ่มล่าช้า
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="request" value="option2">
+                                        ขอถอนวิชา/ถอนรายวิชา (Drop W)
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="request" value="option3">
+                                        ขอจดทะเบียนศึกษารายวิชาข้ามหลักสูตร
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="request" value="option4">
+                                        ขอลาออก
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="request" value="option5">
+                                        อื่น ๆ
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="file-upload">
+                                <label for="file">อัปโหลดไฟล์</label>
+                                <input type="file" id="file">
+                            </div>
+                            <button type="submit" class="submit-btn">ส่ง</button>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </body>
+</html>

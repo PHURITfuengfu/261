@@ -1,0 +1,46 @@
+/* List Container */
+.history-list {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%; /* ขยายความกว้างให้เต็มพื้นที่ */
+    max-width: 100%; /* ไม่จำกัดความกว้าง */
+    box-sizing: border-box; /* ปรับให้การจัดการ padding ไม่ล้นขอบ */
+    height: auto; /* ความยาวตามเนื้อหา */
+    min-height: 1000px; /* กำหนดความสูงขั้นต่ำ */
+    border-bottom: 2px solid #8c8787;
+}
+
+
+/* Date Group Title */
+.history-date-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #444;
+    padding-top: 1rem;
+    border-top: 3px solid #ddd;
+
+}
+
+
+.tab-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างข้อความกับเส้นใต้ */
+    text-align: left; /* จัดข้อความให้ชิดซ้าย */
+}
+
+.tab-btn.active {
+    border-bottom: 2px solid #9a9a9a; /* เส้นใต้สีดำ */
+    padding-bottom: 10px; /* เพิ่มระยะห่างจากเส้นใต้ */
+    width: 100%; /* ปรับความยาวเส้นใต้ */
+    max-width: 100%; /* ควบคุมความยาวให้ไม่เกินขนาดของบล็อก */
+}

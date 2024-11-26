@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ระบบคำร้องออนไลน์ มหาวิทยาลัยธรรมศาสตร์">
+    <title>ตรวจสอบสถานะคำร้อง - ระบบคำร้องนักศึกษา</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles_student.css">
+    <link rel="stylesheet" href="css/styles_check.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="img/thammasat-logo.png" alt="Thammasat University Logo">
+            </div>
+
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="img/blank-profile-picture-973460_1920.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <div class="student-name">Loading...</div>
+                    <div class="student-id">Loading...</div>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <a href="Student_history.html" class="menu-btn">
+                    <i class="fas fa-user"></i>
+                    ข้อมูลส่วนตัว
+                </a>
+                <a href="petition_type.html" class="menu-btn">
+                    <i class="fas fa-file-alt"></i>
+                    เขียนคำร้อง
+                </a>
+                <a href="check_status.html" class="menu-btn active">
+                    <i class="fas fa-tasks"></i>
+                    ตรวจสอบสถานะคำร้อง
+                </a>
+                <a href="check_History.html" class="menu-btn">
+                    <i class="fas fa-history"></i>
+                    ดูประวัติคำร้อง
+                </a>
+                <a href="#" class="menu-btn logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    ออกจากระบบ
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="content-header">
+                <h1>ตรวจสอบสถานะคำร้อง</h1>
+            </header>
+
+            <div class="content-body">
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="waitforProgress">รอพิจารณา</button> 
+                        <button class="tab-btn" data-tab="inprocess">กำลังดำเนินการ</button>
+                        <button class="tab-btn" data-tab="completed">ดำเนินการเสร็จสมบูรณ์</button>
+                        <button class="tab-btn" data-tab="cancelled">ถูกยกเลิก</button>
+                        
+                    </div>
+                </div>
+                
+                <div class="petition-list">
+                    <!-- Petitions will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/check_script.js"></script>
+</body>
+</html>

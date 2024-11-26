@@ -1,0 +1,337 @@
+/* styles_form.css */
+
+/* Header Navigation */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.back-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.back-link:hover {
+    color: var(--tu-red);
+}
+
+.separator {
+    color: var(--text-gray);
+    margin: 0 0.5rem;
+}
+
+/* Form Container */
+.form-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.petition-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.name-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Form Inputs */
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--background-gray);
+    color: var(--text-gray);
+}
+
+.form-group input[type="text"]:disabled {
+    background-color: var(--background-gray);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Radio Groups */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.radio-option {
+    position: relative;
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-option label {
+    display: block;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    background-color: var(--background-gray);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.radio-option label::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 1.2rem;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--text-gray);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.radio-option input[type="radio"]:checked + label::before {
+    border-color: var(--tu-red);
+    background-color: var(--tu-red);
+    box-shadow: inset 0 0 0 4px white;
+}
+
+.radio-option input[type="radio"]:checked + label {
+    background-color: white;
+    border: 1px solid var(--tu-red);
+}
+
+/* Sub Fields */
+.sub-fields {
+    display: none;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.radio-option input[type="radio"]:checked + label .sub-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.sub-fields input {
+    background-color: white !important;
+}
+
+/* Additional Info */
+.additional-info {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #fff3cd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #856404;
+    line-height: 1.5;
+}
+
+/* Sub Options */
+.sub-options {
+    display: none;
+    margin-top: 1rem;
+}
+
+.radio-option input[type="radio"]:checked + label .sub-options {
+    display: block;
+}
+
+.radio-sub-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.radio-sub-option input[type="radio"] {
+    position: relative;
+    opacity: 1;
+    width: auto;
+    height: auto;
+}
+
+.radio-sub-option label {
+    padding: 0;
+    background: none;
+    margin: 0;
+}
+
+.sub-input {
+    display: none;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.radio-sub-option input[type="radio"]:checked ~ .sub-input {
+    display: block;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-gray);
+}
+
+.submit-btn {
+    padding: 0.75rem 3rem;
+    background-color: var(--tu-red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background-color: var(--tu-dark-red);
+}
+
+.submit-btn:disabled {
+    background-color: var(--border-gray);
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .name-group {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-option label {
+        padding: 0.75rem;
+        padding-left: 2rem;
+    }
+
+    .radio-option label::before {
+        left: 0.75rem;
+        top: 1rem;
+    }
+}
+
+/* Focus States */
+.form-group input[type="text"]:focus:not([disabled]),
+.form-group select:focus {
+    outline: none;
+    border-color: var(--tu-red);
+    box-shadow: 0 0 0 2px rgba(212, 0, 0, 0.1);
+}
+
+/* Error States */
+.form-group.error input {
+    border-color: var(--error-red);
+}
+
+.error-message {
+    color: var(--error-red);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.semester-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.semester-line .semester-input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.semester-line span {
+    color: #333;
+    white-space: nowrap;
+}
+
+.graduation-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.graduation-info .semester-input,
+.graduation-info .year-input {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.graduation-info span {
+    color: #333;
+    white-space: nowrap;
+}
+
+.major-options .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.major-options .major-detail {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.major-detail:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}

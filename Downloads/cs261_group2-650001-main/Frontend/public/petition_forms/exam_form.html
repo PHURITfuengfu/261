@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ระบบคำร้องออนไลน์ มหาวิทยาลัยธรรมศาสตร์">
+    <title>ระบบคำร้องออนไลน์ - คำร้องสอบ</title>
+    <link rel="stylesheet" href="../css/styles_student.css">
+    <link rel="stylesheet" href="../css/styles_form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../img/thammasat-logo.png" alt="Thammasat University Logo">
+            </div>
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="../img/blank-profile-picture-973460_1920.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <p class="student-name">Loading...</p>
+                    <p class="student-id">Loading...</p>
+                </div>
+            </div>
+            <nav class="menu">
+                <button class="menu-btn">ข้อมูลส่วนตัว</button>
+                <button class="menu-btn active">เขียนคำร้อง</button>
+                <button class="menu-btn">ตรวจสอบสถานะคำร้อง</button>
+                <button class="menu-btn logout">ออกจากระบบ</button>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="loading-overlay">
+                <div class="spinner"></div>
+                <p>กำลังโหลดข้อมูล...</p>
+            </div>
+
+            <header class="content-header">
+                <h1>ยื่นคำร้อง</h1>
+            </header>
+
+            <div class="form-container">
+                <header class="content-header">
+                    <div class="header-nav">
+                        <a href="../petition_type.html?type=exam" class="back-link">
+                            <span class="back-icon">‹</span>
+                            คำร้องกรณีขาดสอบ
+                        </a>
+                        <span class="separator">|</span>
+                        <span>กรอกแบบฟอร์มออนไลน์</span>
+                    </div>
+                </header>
+                <form id="examForm" class="petition-form">
+                    <div class="form-section">
+                        <!-- Personal Info Section -->
+                        <div class="form-group">
+                            <label>ชื่อ</label>
+                            <div class="name-group">
+                                <input type="text" id="firstName" disabled>
+                                <input type="text" id="lastName" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <div class="name-group">
+                                <input type="text" id="firstNameEn" disabled>
+                                <input type="text" id="lastNameEn" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>เลขทะเบียน</label>
+                            <input type="text" id="idNumber" placeholder="กรุณากรอกเลขทะเบียน">
+                        </div>
+
+                        <!-- Course and Exam Information -->
+                        <div class="form-group">
+                            <label>ขาดสอบวิชา (รหัสและชื่อวิชา)</label>
+                            <input type="text" name="courseInfo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ซึ่งสอบใน (วันที่ / เดือน / ปี)</label>
+                            <input type="date" name="examDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>อาจารย์ที่ปรึกษา</label>
+                            <input type="text" name="advisor" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>สาเหตุการขาดสอบเนื่องจาก</label>
+                            <input type="text" name="reason" required>
+                        </div>
+
+                        <!-- Document Attachments -->
+                        <div class="form-group">
+                            <label>แนบเอกสาร</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="doc1" name="document" value="สำเนาใบเสร็จค่ารักษาพยาบาล">
+                                    <label for="doc1">สำเนาใบเสร็จค่ารักษาพยาบาล</label>
+                                </div>
+
+                                <div class="radio-option">
+                                    <input type="radio" id="doc2" name="document" value="ใบรับรองแพทย์">
+                                    <label for="doc2">ใบรับรองแพทย์</label>
+                                </div>
+
+                                <div class="radio-option">
+                                    <input type="radio" id="doc3" name="document" value="สำเนาใบเสร็จบัตรจดทะเบียน">
+                                    <label for="doc3">สำเนาใบเสร็จบัตรจดทะเบียน</label>
+                                </div>
+
+                                <div class="radio-option">
+                                    <input type="radio" id="doc4" name="document" value="อื่นๆ">
+                                    <label for="doc4">
+                                        อื่นๆ
+                                        <input type="text" class="other-input" name="otherDocument" placeholder="โปรดระบุ">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conclusion Field -->
+                        <div class="form-group">
+                            <label>เพราะฉะนั้น</label>
+                            <input type="text" name="conclusion" placeholder="กรุณากรอกข้อความ" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">ส่ง</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>แจ้งเตือน</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/API.js"></script>
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4/dist/fontkit.umd.js"></script>
+    <script type="module" src="../js/exam_form.js"></script>
+</body>
+</html>

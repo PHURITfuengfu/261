@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ระบบคำร้องออนไลน์ มหาวิทยาลัยธรรมศาสตร์">
+    <meta name="theme-color" content="#d40000">
+    <title>Thammasat University - ระบบคำร้องออนไลน์</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <div class="logo">
+                <img src="img/thammasat-logo.png" alt="Thammasat University Logo" width="180" height="180">
+            </div>
+            <div class="login-header">
+                <h1>ระบบคำร้องออนไลน์</h1>
+                <h2>มหาวิทยาลัยธรรมศาสตร์</h2>
+            </div>
+            <form id="loginForm" novalidate>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="username">รหัสนักศึกษา / Username</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="กรุณากรอกรหัสนักศึกษาหรือ Username"
+                            autocomplete="username"
+                            required
+                            minlength="4"
+                            aria-describedby="usernameError">
+                        <small class="error-message" id="usernameError" role="alert"></small>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="password">รหัสผ่าน / Password</label>
+                        <div class="password-field">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="กรุณากรอกรหัสผ่าน"
+                                autocomplete="current-password"
+                                required
+                                minlength="6"
+                                aria-describedby="passwordError">
+                            <button 
+                                type="button" 
+                                id="togglePassword" 
+                                class="toggle-password"
+                                aria-label="Toggle password visibility">
+                                <img src="img/eye-closed.png" alt="" width="20" height="20">
+                            </button>
+                        </div>
+                        <small class="error-message" id="passwordError" role="alert"></small>
+                    </div>
+
+                    <div class="capslock-warning" id="capslockWarning">
+                        <img src="img/warning.png" alt="warning" width="16" height="16">
+                        <span>Caps Lock เปิดอยู่</span>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="role">สถานะผู้ใช้งาน / Role</label>
+                        <select 
+                            id="role" 
+                            name="role" 
+                            required
+                            aria-describedby="roleError">
+                            <option value="" disabled selected>กรุณาเลือกสถานะผู้ใช้งาน</option>
+                            <option value="student">นักศึกษา / Student</option>
+                            <option value="lecturer">อาจารย์ / Lecturer</option>
+                        </select>
+                        <small class="error-message" id="roleError" role="alert"></small>
+                    </div>
+                </div>
+
+                <div class="input-field checkbox-field">
+                    <label class="checkbox-container" for="remember">
+                        <input 
+                            type="checkbox" 
+                            id="remember" 
+                            name="remember">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">จดจำบัญชีนี้</span>
+                    </label>
+                </div>
+
+                <div class="form-footer">
+                    <button 
+                        type="submit" 
+                        class="login-btn" 
+                        disabled
+                        aria-label="เข้าสู่ระบบ">
+                        <span class="btn-text">เข้าสู่ระบบ</span>
+                        <div class="spinner" role="status" aria-label="กำลังดำเนินการ"></div>
+                    </button>
+                    <div class="links">
+                        <a href="https://account.tu.ac.th/ForgotPassword" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="ลืมรหัสผ่าน เปิดในหน้าต่างใหม่">
+                            ลืมรหัสผ่าน?
+                        </a>
+                        <span class="divider" aria-hidden="true">|</span>
+                        <a href="https://account.tu.ac.th/" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="สมัครสมาชิก เปิดในหน้าต่างใหม่">
+                            สมัครสมาชิก
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="image-side" role="presentation">
+            <img src="img/brick-wall.jpg" 
+                 alt="" 
+                 width="800" 
+                 height="600" 
+                 loading="lazy">
+            <div class="image-overlay" aria-hidden="true"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Thammasat University. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://tu.ac.th/contact" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="ติดต่อเรา เปิดในหน้าต่างใหม่">ติดต่อเรา</a>
+                <span class="divider" aria-hidden="true">|</span>
+                <a href="https://tu.ac.th/privacy-policy" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="นโยบายความเป็นส่วนตัว เปิดในหน้าต่างใหม่">นโยบายความเป็นส่วนตัว</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="errorModal" 
+         class="modal" 
+         role="dialog" 
+         aria-labelledby="modalTitle" 
+         aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">แจ้งเตือน</h3>
+                <button class="close-modal" 
+                        aria-label="ปิดหน้าต่างแจ้งเตือน">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeModal()">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/Validation_login.js"></script>
+</body>
+</html>
